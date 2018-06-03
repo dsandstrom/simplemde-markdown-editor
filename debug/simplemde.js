@@ -42503,6 +42503,12 @@ SimpleMDE.prototype.createStatusbar = function(status) {
 	return bar;
 };
 
+SimpleMDE.prototype.patchHTML = function(element, html) {
+	if(!element) return;
+
+	patchHTML(element, html);
+};
+
 /**
  * Set preview target and remember it
  * Render the current markdown content inside it
@@ -42520,7 +42526,7 @@ SimpleMDE.prototype.renderPreview = function(previewTarget) {
 	if(!editor.previewElement) {
 		return;
 	}
-	patchHTML(editor.previewElement, editor.options.previewRender(editor.value()));
+	editor.patchHTML(editor.previewElement, editor.options.previewRender(editor.value()));
 };
 
 /**
