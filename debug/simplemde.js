@@ -41514,7 +41514,7 @@ function _toggleLine(cm, name) {
 	var _checkChar = function(name, char) {
 		var map = {
 			"quote": "\>",
-			"unordered-list": "\*",
+			"unordered-list": "\\*",
 			"ordered-list": "\d+."
 		};
 		var rt = new RegExp(map[name]);

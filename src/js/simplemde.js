@@ -912,7 +912,7 @@ function _toggleLine(cm, name) {
 	var _checkChar = function(name, char) {
 		var map = {
 			"quote": "\>",
-			"unordered-list": "\*",
+			"unordered-list": "\\*",
 			"ordered-list": "\d+."
 		};
 		var rt = new RegExp(map[name]);
@@ -1924,10 +1924,7 @@ SimpleMDE.prototype.renderPreview = function(previewTarget) {
 	if(!editor.previewElement) {
 		return;
 	}
-	editor.patchHTML(
-		editor.previewElement,
-		editor.options.previewRender(editor.value())
-	);
+	editor.patchHTML(editor.previewElement, editor.options.previewRender(editor.value()));
 };
 
 /**
